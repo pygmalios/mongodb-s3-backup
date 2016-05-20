@@ -1,0 +1,14 @@
+mongos3backup:
+  image: 'pygmalios/mongodb-s3-backup:2.6'
+  autodestroy: always
+  environment:
+    - AWS_ACCESS_KEY_ID=<key_here> #MUST CHANGE THIS
+    - AWS_SECRET_ACCESS_KEY=<secret_here> #MUST CHANGE THIS
+    - AWS_DEFAULT_REGION=us-east-1 #OPTIONALLY CHANGE THIS
+    - BACKUP_NAME=mongobackup #OPTIONALLY CHANGE THIS
+    - S3_BUCKET_NAME=dockup-backups #OPTIONALLY CHANGE THIS
+    - MONGO_HOST=mongodb:27017 #MUST CHANGE THIS
+    - MONGO_DATABASE=<database_name_here> #MUST CHANGE THIS
+    - MONGO_USER=<username_here> #MUST CHANGE THIS
+    - MONGO_PASSWORD=<password_here> #MUST CHANGE THIS
+
