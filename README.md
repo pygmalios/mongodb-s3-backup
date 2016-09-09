@@ -1,6 +1,6 @@
-# MongoDB 2.6.11 S3 docker backup
+# MongoDB 3.0.12 S3 docker backup
 
-Docker image to backup MongoDB 2.6.11 to S3 using mongodump.
+Docker image to backup MongoDB 3.0.12 to S3 using mongodump.
 
 ## Backup
 Launch `mongodbs3backup` container with the following flags:
@@ -8,7 +8,7 @@ Launch `mongodbs3backup` container with the following flags:
 ```
 $ docker run --rm \
 --env-file env.txt \
---name mongodbs3backup pygmalios/mongodb-s3-backup:2.6
+--name mongodbs3backup pygmalios/mongodb-s3-backup:3.0
 ```
 
 The contents of `env.txt` being:
