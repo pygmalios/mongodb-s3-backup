@@ -1,9 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
+
+ENV MONGODB_VERSION=3.0.12
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
-    && echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' > /etc/apt/sources.list.d/mongodb.list \
+    && echo 'deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse' > /etc/apt/sources.list.d/mongodb.list \
     && apt-get update \
-    && apt-get install -y mongodb-org-tools=2.6.11 s3cmd ca-certificates
+    && apt-get install -y mongodb-org-tools=$MONGODB_VERSION s3cmd ca-certificates
 
 WORKDIR /root/
 
