@@ -16,6 +16,7 @@ echo "[default]" > .s3cfg
 echo "access_key = $AWS_ACCESS_KEY_ID" >> .s3cfg
 echo "secret_key = $AWS_SECRET_ACCESS_KEY" >> .s3cfg
 echo "bucket_location = $AWS_DEFAULT_REGION" >> .s3cfg
+echo "use_https = True" >> .s3cfg
 s3cmd put bak/$BACKUP_FILENAME s3://$S3_BUCKET_NAME/$BACKUP_FILENAME
 rm .s3cfg
 
