@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 TIMESTAMP=`date -u +"%Y-%m-%dT%H-%M-%SZ"`
 BACKUP_FILENAME=$BACKUP_NAME.$TIMESTAMP.tgz
 
