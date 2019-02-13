@@ -1,6 +1,6 @@
-# MongoDB 3.2 S3 docker backup
+# MongoDB 3.4 S3 docker backup
 
-Docker image to backup MongoDB 3.2 to S3 using mongodump.
+Docker image to backup MongoDB 3.4 to S3 using mongodump.
 
 ## Backup
 Launch `mongodbs3backup` container with the following flags:
