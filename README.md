@@ -18,6 +18,10 @@ MONGO_HOST=mongodb:27017
 MONGO_DATABASE=<database_name_here>
 MONGO_USER=<username_here>
 MONGO_PASSWORD=<password_here>
+
+MONGO_DATABASE=<database_name_here>
+MONGO_URI=<mongo uri>
+
 AWS_ACCESS_KEY_ID=<key_here>
 AWS_SECRET_ACCESS_KEY=<secret_here>
 AWS_DEFAULT_REGION=us-east-1
