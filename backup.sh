@@ -10,7 +10,12 @@ BACKUP_FILENAME=$BACKUP_NAME.$TIMESTAMP.tgz
 mkdir -p bak
 
 echo "Backing up $MONGO_DATABASE"
-mongodump -h $MONGO_HOST -d $MONGO_DATABASE -u $MONGO_USER -p $MONGO_PASSWORD -o bak/mongodb_backup
+
+if [ ! -z ${MONGO_ORIGIN_URI:-} ]; then
+  mongodump --uri="$MONGO_URI" -o bak/mongodb_backup
+else
+  mongodump -h $MONGO_HOST -d $MONGO_DATABASE -u $MONGO_USER -p $MONGO_PASSWORD -o bak/mongodb_backup
+fi;
 
 echo "Compressing backup"
 tar czf bak/$BACKUP_FILENAME bak/mongodb_backup/
