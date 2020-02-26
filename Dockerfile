@@ -1,9 +1,11 @@
-FROM ubuntu:14.04
+FROM ubuntu:bionic
 
-ENV MONGODB_VERSION=3.4.19
+ENV MONGODB_VERSION=4.2.3
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv BC711F9BA15703C6 \
-    && echo 'deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse' > /etc/apt/sources.list.d/mongodb.list \
+RUN apt-get update \
+    && apt-get install -y curl gnupg \
+    && curl https://www.mongodb.org/static/pgp/server-4.2.asc -o - | apt-key add - \
+    && echo 'deb http://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse' > /etc/apt/sources.list.d/mongodb.list \
     && apt-get update \
     && apt-get install -y mongodb-org-tools=$MONGODB_VERSION s3cmd ca-certificates
 
